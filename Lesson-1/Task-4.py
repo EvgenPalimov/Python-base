@@ -5,12 +5,10 @@
 user_number = int(input("Введите целое положтельное число: "))
 max = user_number % 10
 
-while user_number >= 1:
+while user_number >= 10:
     user_number = user_number // 10
     if user_number % 10 > max:
         max = user_number % 10
-    if user_number > 9:
-        continue
-    else:
-        print(f"Максимальное цифра в числе: {max}")
-        break
+
+print(f"Максимальное цифра в числе: {max}")
+
