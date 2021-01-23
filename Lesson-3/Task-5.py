@@ -16,10 +16,13 @@ while exit == False:
     for el in range(len(user_answer)):
         if user_answer[el] == "q":
             exit = True
+            continue
         else:
-            result = result + int(user_answer[el])
+            try:
+                result = result + int(user_answer[el])
+            except ValueError:
+                print("Нужно вести целое число!")
     sum_result = sum_result + result
-
     print(f"Сумма ваших чисел: {result}.")
     print(f"Общая сумма всех ваших чисел: {sum_result}")
 print(f"Финальная сумма всех ваших чисел: {sum_result}")
