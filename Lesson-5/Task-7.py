@@ -28,4 +28,4 @@ with open("file_7.txt") as file:
     )
 
 with open('file_7.json', 'w') as file:
-    file.write(json.dumps(results))
+    file.write(json.dumps(results, indent=True, ensure_ascii=False))
