@@ -10,11 +10,9 @@ with open("fail_2.txt", encoding="utf-8") as file:
     # Когда вносил, почему-то цикл for не выполнялся, так и не понял почему.
     # Видимо "read" закрывет его, мое предположение.
 with open("fail_2.txt", encoding="utf-8") as file:
-    i = 0
     lines = 0
     litters = 0
     for line in file:
-        i += 1
         lines += 1
         litters = len(line.split())
         print(f"{litters} слов(о) в {i} строке.")
