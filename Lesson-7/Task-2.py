@@ -9,6 +9,14 @@
 реализовать абстрактные классы для основных классов проекта, проверить на практике работу декоратора @property.
 """
 
+from abc import ABC, abstractmethod
+
+
+class Cloth(ABC):
+    @abstractmethod
+    def get_material_size(self):
+        pass
+
 
 class Coat:
     def __init__(self, width, height):
