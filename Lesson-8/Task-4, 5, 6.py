@@ -29,16 +29,17 @@ class OfficeEquipment:
         self.price = price
         self.quantity = quantity
         self.modele = modele
-        self.my_store = []
+        self.my_unit = {'Модель устройства': self.name, 'Цена за ед': self.price, 'Количество': self.quantity}
 
     def reception(self):
         unit = {'Модель устройства': self.name, 'Цена за ед': self.price, 'Количество': self.quantity,
                 'Тип техники': self.modele}
-        self.my_store.append(unit)
-        return f'Ваше устройство добавлено на склад -\n {unit}'
+        self.my_unit.update(unit)
+        return f'Ваше устройство добавлено на склад -\n {unit}', self.my_unit
 
     def transfer(self):
         pass
+    # Не знаю как реализоать данную функцию.
 
 
 class Printer(OfficeEquipment):
@@ -59,9 +60,8 @@ class Xerox(OfficeEquipment):
 unit_1 = Printer('HP', 2000, 5)
 unit_2 = Scanner('Canon', 1200, 5)
 unit_3 = Xerox('Xerox', 1500, 1)
-
-
 print(unit_1.reception())
 print(unit_2.reception())
 print(unit_3.reception())
+
 
