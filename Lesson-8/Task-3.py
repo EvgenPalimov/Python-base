@@ -8,23 +8,21 @@
 
 
 class MyError(Exception):
-    text = "Можно вводить телько цифры!"
+    text = "Можно вводить только положительные цифры!"
 
     def __str__(self):
         return self.text
 
 
 my_list = []
+user_answer = None
 
-while True:
+while user_answer != "stop":
 
     user_answer = input('Введите число, для заполения списка или наберите "stop" для выхода: ')
 
-    if user_answer == "stop":
-        break
-
     try:
-        if not user_answer.isdigit():
+        if not user_answer.isnumeric():
             raise MyError
 
         my_list.append(int(user_answer))
