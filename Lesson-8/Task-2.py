@@ -35,8 +35,8 @@ except MyError as err:
 except NegativeNumber as err_1:
     print(err_1)
 else:
-    result = numerator / denumerator
-    print(f"{numerator} / {denumerator} = {result.__int__()}")
+    result = numerator // denumerator
+    print(f"{numerator} / {denumerator} = {result}")
 
 
 
