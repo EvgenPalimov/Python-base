@@ -22,6 +22,9 @@ while user_answer != "stop":
     user_answer = input('Введите число, для заполения списка или наберите "stop" для выхода: ')
 
     try:
+        if user_answer == "stop":
+            print("Вы завершили формирования списка")
+            break
         if not user_answer.isnumeric():
             raise MyError
 
