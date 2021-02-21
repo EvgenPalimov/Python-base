@@ -19,12 +19,14 @@ class NegativeNumber(Exception):
         return self.text
 
 
-inp_data = int(input("Введите число: "))
+numerator = int(input("Введите Числитель: "))
+denumerator = int(input("Введите знаменатель: "))
+
 
 try:
-    if inp_data < 0:
+    if denumerator < 0:
         raise NegativeNumber
-    if inp_data == 0:
+    if denumerator == 0:
         raise MyError
 except ValueError:
     print("Вы ввели не число!")
@@ -33,7 +35,8 @@ except MyError as err:
 except NegativeNumber as err_1:
     print(err_1)
 else:
-    print(f"Все хорошо. Вы ввели число: {inp_data}.")
+    result = numerator / denumerator
+    print(f"{numerator} / {denumerator} = {result.__int__()}")
 
 
 
